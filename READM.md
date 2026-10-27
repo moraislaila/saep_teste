@@ -1,0 +1,1 @@
+npm i express pg cors dotenv

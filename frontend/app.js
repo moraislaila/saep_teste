@@ -151,9 +151,6 @@ function atualizarTela() {
     $('btnLogin').textContent = 'Logout';
 }
 
-
-// ---------------- menu lateral ----------------
-
 // abre o menu com a foto, o nome e os totais do administrador
 $('btnPerfil').addEventListener('click', async () => {
     if (!usuario) return abrirLogin();
