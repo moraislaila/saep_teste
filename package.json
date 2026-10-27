@@ -1,7 +1,8 @@
 {
-  "name": "teste",
-  "version": "1.0.0",
-  "main": "server.js",
+  "name": "Laila_morais",
+  "lockfileVersion": 3,
+  "requires": true,
+  "packages": {},
   "scripts": {
     "start": "node server.js",
     "dev": "node server.js"
@@ -10,7 +11,7 @@
     "cors": "^2.8.6",
     "dotenv": "^18.0.9",
     "express": "^5.3.0",
-    "multer": "^2.4.0",
+    "multer": "^2.5.0",
     "pg": "^8.23.1"
   },
   "author": "",

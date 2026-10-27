@@ -179,9 +179,3 @@ dialog input { padding: 10px 14px; border: 1px solid #000; border-radius: 8px; f
 .modal-topo .btn-icone { position: absolute; right: 0; top: 0; }
 .botoes { display: flex; justify-content: flex-end; gap: 8px; margin-top: 8px; }
 
-/* ---------- celular ---------- */
-@media (max-width: 700px) {
-    #galeria { grid-template-columns: 1fr; }
-    header { padding: 12px 16px; }
-    h1 { font-size: 20px; letter-spacing: 1px; }
-}
