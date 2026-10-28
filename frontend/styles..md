@@ -1,4 +1,3 @@
-/* fonte da prova (Inter); se não tiver instalada usa a Roboto da pasta fonts */
 @font-face { font-family: 'Roboto'; font-weight: 400; src: url('/fonts/roboto/Roboto-Regular.ttf'); }
 @font-face { font-family: 'Roboto'; font-weight: 500; src: url('/fonts/roboto/Roboto-Medium.ttf'); }
 @font-face { font-family: 'Roboto'; font-weight: 700; src: url('/fonts/roboto/Roboto-Bold.ttf'); }
@@ -10,58 +9,55 @@
 
 body {
     font-family: Inter, Roboto, sans-serif;
-    background: #f4f4f4;
-    color: #000;
+    background: #f2f2f2;
     min-height: 100vh;
     display: flex;
     flex-direction: column;
 }
 
-/* ---------- botões ---------- */
+/* botões */
 .btn {
-    background: #000;
+    background: #222;
     color: #fff;
-    border: 1px solid #000;
+    border: 1px solid #222;
     border-radius: 20px;
     padding: 8px 18px;
     font: inherit;
-    font-size: 14px;
     cursor: pointer;
 }
 .btn:disabled, .btn.desativado { opacity: .4; }
 .btn:disabled { cursor: not-allowed; }
-.btn-contorno { background: none; color: #000; }
+.btn-contorno { background: none; color: #222; }
 .btn-icone { background: none; border: none; cursor: pointer; }
 .btn-icone img { width: 22px; height: 22px; display: block; }
 
-/* ---------- cabeçalho ---------- */
+/* cabeçalho */
 header {
     display: grid;
     grid-template-columns: 1fr auto 1fr;
     align-items: center;
     padding: 14px 32px;
     background: #fff;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, .12);
+    border-radius: 0 0 20px 20px;
 }
 .usuario { display: flex; align-items: center; gap: 12px; }
-.usuario img { width: 60px; height: 60px; border-radius: 50%; object-fit: cover; border: 2px solid #000; }
+.usuario img { width: 60px; height: 60px; border-radius: 50%; object-fit: cover; }
 .usuario-info { display: flex; flex-direction: column; align-items: flex-start; gap: 4px; }
 .usuario-info .btn { padding: 4px 14px; font-size: 13px; }
-h1 { font-size: 30px; letter-spacing: 3px; text-align: center; }
+h1 { font-size: 28px; text-align: center; }
 #btnLogin { justify-self: end; }
 
-/* ---------- corpo ---------- */
+/* corpo */
 main { flex: 1; width: 100%; max-width: 1000px; margin: 0 auto; padding: 28px 16px; }
 
-.busca { position: relative; max-width: 520px; margin: 0 auto 6px; }
-.busca input { width: 100%; padding: 11px 44px 11px 16px; border: 1px solid #000; border-radius: 24px; font: inherit; }
-.busca img { position: absolute; right: 16px; top: 50%; transform: translateY(-50%); width: 20px; height: 20px; }
 #areaBusca { margin-bottom: 24px; text-align: center; }
+.busca { position: relative; max-width: 520px; margin: 0 auto 6px; }
+.busca input { width: 100%; padding: 11px 44px 11px 16px; border: 1px solid #999; border-radius: 24px; font: inherit; }
+.busca img { position: absolute; right: 16px; top: 50%; transform: translateY(-50%); width: 20px; height: 20px; }
 
-/* ---------- galeria (3 colunas) ---------- */
+/* galeria (3 colunas) */
 #galeria { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
-
-.card { background: #fff; border-radius: 10px; overflow: hidden; box-shadow: 0 2px 8px rgba(0, 0, 0, .12); }
+.card { background: #fff; border-radius: 14px; overflow: hidden; box-shadow: 0 2px 8px rgba(0, 0, 0, .12); }
 .capa { position: relative; }
 .capa img { display: block; width: 100%; aspect-ratio: 3 / 4; object-fit: cover; }
 
@@ -72,15 +68,14 @@ main { flex: 1; width: 100%; max-width: 1000px; margin: 0 auto; padding: 28px 16
     transform: translate(-50%, -50%);
     width: 85%;
     padding: 12px;
-    background: rgba(0, 0, 0, .85);
+    background: rgba(0, 0, 0, .8);
     color: #fff;
     font-size: 14px;
     line-height: 1.6;
     text-align: center;
-    border-radius: 8px;
+    border-radius: 10px;
     opacity: 0;
     pointer-events: none;
-    transition: opacity .2s;
 }
 .capa:hover .dica { opacity: 1; }
 
@@ -106,22 +101,24 @@ main { flex: 1; width: 100%; max-width: 1000px; margin: 0 auto; padding: 28px 16
 }
 
 .vazio { grid-column: 1 / -1; text-align: center; color: #666; }
+.erro { color: #f00; font-size: 13px; }
 
-/* ---------- cadastro de filmes ---------- */
-#cadastro { display: flex; flex-direction: column; gap: 6px; max-width: 480px; margin: 0 auto 32px; }
-#cadastro .btn-contorno { align-self: flex-start; margin-bottom: 8px; }
-#cadastro h2 { margin-bottom: 8px; }
+/* cadastro de filmes */
+#cadastro {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    max-width: 480px;
+    margin: 0 auto 32px;
+}
+#cadastro .btn-contorno { align-self: flex-start; }
 #cadastro label, .rotulo { font-weight: 500; margin-top: 8px; }
-#cadastro input[id] { padding: 10px 14px; border: 1px solid #000; border-radius: 8px; font: inherit; }
+#cadastro input[id] { padding: 10px 14px; border: 1px solid #000; border-radius: 12px; font: inherit; }
 #cadastro .arquivo label { margin: 0; font-weight: 400; cursor: pointer; }
 #cadastro #btnCadastrar { align-self: flex-start; margin-top: 12px; }
 .arquivo { display: flex; align-items: center; gap: 12px; }
 
-.erro { color: #f00; font-size: 13px; }
-
-
-
-/* ---------- menu lateral ---------- */
+/* menu lateral */
 #menu {
     position: fixed;
     top: 0; left: 0;
@@ -129,6 +126,7 @@ main { flex: 1; width: 100%; max-width: 1000px; margin: 0 auto; padding: 28px 16
     height: 100%;
     padding: 24px;
     background: #fff;
+    border-radius: 0 20px 20px 0;
     box-shadow: 2px 0 12px rgba(0, 0, 0, .3);
     display: flex;
     flex-direction: column;
@@ -137,45 +135,28 @@ main { flex: 1; width: 100%; max-width: 1000px; margin: 0 auto; padding: 28px 16
 }
 #menu .btn-icone { align-self: flex-end; }
 .menu-foto { width: 96px; height: 96px; border-radius: 50%; object-fit: cover; align-self: center; }
-#menu h3 { text-align: center; }
-.btn-borda {
-    width: 100%;
-    background: none;
-    border: none;
-    border-top: 2px solid #000;
-    border-bottom: 2px solid #000;
-    padding: 12px;
-    font: inherit;
-    font-size: 16px;
-    font-weight: 500;
-    cursor: pointer;
-}
+#menu h3, #menu p { text-align: center; }
+.btn-borda { width: 100%; background: none; border: 2px solid #000; border-radius: 14px; padding: 12px; font: inherit; font-weight: 500; cursor: pointer; }
 
-/* ---------- rodapé: nome à esquerda, redes no centro, copyright à direita ---------- */
+/* rodapé */
 footer {
     display: grid;
     grid-template-columns: 1fr auto 1fr;
     align-items: center;
     padding: 16px 32px;
-    background: #000;
+    background: #222;
     color: #fff;
+    border-radius: 20px 20px 0 0;
 }
 .redes { display: flex; gap: 18px; }
 .redes img { width: 24px; height: 24px; filter: invert(1); } /* svg preto vira branco */
 .copyright { text-align: right; }
 
-/* ---------- modal de login ---------- */
-dialog {
-    margin: auto;
-    width: min(400px, 90vw);
-    padding: 24px;
-    border: none;
-    border-radius: 12px;
-}
+/* modal de login */
+dialog { margin: auto; width: min(400px, 90vw); padding: 24px; border: none; border-radius: 16px; }
 dialog[open] { display: flex; flex-direction: column; gap: 8px; }
 dialog::backdrop { background: rgba(0, 0, 0, .6); }
-dialog input { padding: 10px 14px; border: 1px solid #000; border-radius: 8px; font: inherit; }
+dialog input { padding: 10px 14px; border: 1px solid #999; border-radius: 10px; font: inherit; }
 .modal-topo { position: relative; text-align: center; margin-bottom: 8px; }
 .modal-topo .btn-icone { position: absolute; right: 0; top: 0; }
 .botoes { display: flex; justify-content: flex-end; gap: 8px; margin-top: 8px; }
-
